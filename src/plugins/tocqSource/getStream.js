@@ -2,7 +2,7 @@ const EventSource = require('eventsource');
 const { Readable } = require('stream');
 
 
-end = (es, stream) => {
+const end = (es, stream) => {
   stream.destroy();
   es.close();
 };
