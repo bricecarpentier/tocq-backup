@@ -7,7 +7,7 @@ const tocqSource = ({ serverURL }) => async lastEventId => {
   const currentId = await getCurrentEventId(serverURL);
   const stream = getStream(serverURL, lastEventId, currentId);
   return {
-    stream: stream.pipe(JSONStream.stringify()),
+    stream: stream.pipe(JSONStream.stringify(), { end: true }),
     currentId,
   };
 };
