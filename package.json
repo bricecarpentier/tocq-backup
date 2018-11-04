@@ -4,7 +4,8 @@
   "description": "service that implements a backup strategy for a tocq event store",
   "main": "index.js",
   "scripts": {
-    "test": "jest src/"
+    "test": "jest src/ --coverage",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
     "fetch-json": "^2.1.1",
     "node-fetch": "^2.2.0",
     "s3-upload-stream": "^1.0.7"
+  },
+  "jest": {
+    "collectCoverageFrom": ["src/**/*.js", "!**/node_modules/**", "!**/vendor/**"]
   }
 }
